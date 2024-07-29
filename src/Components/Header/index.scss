@@ -1,0 +1,31 @@
+.main-header {
+  height: 68px;
+  background-color: black;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 120px);
+    gap: 8px;
+    cursor: pointer;
+    img {
+      height: 100px;
+      object-fit: cover;
+    }
+    input {
+      width: 200px;
+      height: 24px;
+      padding: 4px;
+    }
+  }
+}
