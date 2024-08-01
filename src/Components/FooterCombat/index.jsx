@@ -4,7 +4,7 @@ import { HeroContext } from "../../HeroContext";
 import CombatDialog from "../CombatDialog";
 
 function FooterCombat() {
-  const { selectedHeros, removeSelectedHeros } = useContext(HeroContext) || {};
+  const { selectedHeros } = useContext(HeroContext) || {};
   const [isCombatDialogOpen, setCombatDialogOpen] = useState(false);
 
   if (!selectedHeros || selectedHeros.length === 0) {
@@ -58,9 +58,6 @@ function FooterCombat() {
               Fight
             </button>
           )}
-          <button className="removeSelected" onClick={removeSelectedHeros}>
-            Remove Selected Heros
-          </button>
         </div>
       </div>
 

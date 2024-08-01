@@ -44,9 +44,33 @@
     .close-button:hover {
       color: red;
     }
+
+    @media (max-width: 540px) {
+      flex-direction: column;
+    }
   }
   .vs-image {
     height: 250px;
+    @media (max-width: 930px) {
+      height: 150px;
+    }
+    @media (max-width: 540px) {
+      height: 120px;
+    }
+  }
+  .winner {
+    @media (max-width: 540px) {
+      font-size: 18px;
+    }
+    @media (max-width: 930px) {
+      font-size: 20px;
+    }
+  }
+  &__winner {
+    font-size: x-large;
+    font-weight: 600;
+    text-decoration: underline;
+    color: green;
   }
 
   &__content__first,
@@ -55,10 +79,19 @@
     align-items: center;
     gap: 10px;
     margin-top: 10px;
-    max-width: 280px;
+    max-width: 310px;
     img {
       border-radius: 10px;
       object-fit: cover;
+      @media (max-width: 540px) {
+        width: 120px;
+      }
+    }
+    h1 {
+      height: 50px;
+      @media (max-width: 540px) {
+        height: auto;
+      }
     }
     .powerstats {
       display: flex;
@@ -70,7 +103,23 @@
         font-weight: 600;
         text-decoration: underline;
         color: #d12020;
+        @media (max-width: 540px) {
+          font-size: large;
+        }
+      }
+      .containerStats {
+        display: flex;
+        align-items: center;
       }
     }
+  }
+  .border-winner {
+    border: 3px solid green;
+    border-radius: 13px;
+  }
+
+  .border-loser {
+    border: 3px solid red;
+    border-radius: 13px;
   }
 }

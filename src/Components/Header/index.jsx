@@ -6,6 +6,7 @@ import { HeroContext } from "../../HeroContext";
 function Header() {
   const navigate = useNavigate();
   const { heros, setFilteredHeros } = useContext(HeroContext);
+  const { selectedHeros, removeSelectedHeros } = useContext(HeroContext) || {};
 
   const goToStart = () => {
     navigate("/");
@@ -22,8 +23,17 @@ function Header() {
   return (
     <div className="main-header">
       <div className="main-header_logo" onClick={goToStart}>
-        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
-        <input type="text" placeholder="Pesquisar" onChange={search} />
+        <div>
+          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
+        </div>
+        <div className="actions">
+          <input type="text" placeholder="Pesquisar" onChange={search} />
+          {selectedHeros && selectedHeros.length > 0 && (
+            <button className="removeSelected" onClick={removeSelectedHeros}>
+              Remove Hero
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

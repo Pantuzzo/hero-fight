@@ -1,5 +1,5 @@
 .main-header {
-  height: 68px;
+  height: auto;
   background-color: black;
   padding: 0 60px;
   display: flex;
@@ -21,11 +21,42 @@
     img {
       height: 100px;
       object-fit: cover;
+      @media (max-width: 1280px) {
+        height: 80px;
+      }
+      @media (max-width: 630px) {
+        height: 50px;
+      }
     }
-    input {
-      width: 200px;
-      height: 24px;
-      padding: 4px;
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      input {
+        width: 200px;
+        height: 24px;
+        padding: 4px;
+        @media (max-width: 1280px) {
+          width: 170px;
+        }
+        @media (max-width: 630px) {
+          width: 120px;
+        }
+      }
+
+      .removeSelected {
+        background-color: #4caf50;
+        color: white;
+        font-size: large;
+        padding: 5px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          background-color: #388e3c;
+          transform: scale(1.05);
+        }
+      }
     }
   }
 }
