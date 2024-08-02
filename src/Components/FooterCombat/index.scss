@@ -45,6 +45,9 @@
       border: transparent;
       border-radius: 5px;
       background: #df3f3f;
+      @media (max-width: 540px) {
+        height: 152px;
+      }
       img {
         width: auto;
         height: auto;
@@ -72,6 +75,9 @@
       border: transparent;
       border-radius: 5px;
       background: #1f1fdd;
+      @media (max-width: 540px) {
+        height: 152px;
+      }
       img {
         width: auto;
         height: auto;
@@ -86,6 +92,7 @@
         font-weight: 600;
         @media (max-width: 540px) {
           font-size: 12px;
+          width: 70px;
         }
       }
     }

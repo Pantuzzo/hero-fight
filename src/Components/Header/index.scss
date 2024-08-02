@@ -48,6 +48,7 @@
       .removeSelected {
         background-color: #4caf50;
         color: white;
+        border: transparent;
         font-size: large;
         padding: 5px 8px;
         border-radius: 5px;
@@ -55,6 +56,10 @@
         &:hover {
           background-color: #388e3c;
           transform: scale(1.05);
+        }
+        @media (max-width: 540px) {
+          font-size: small;
+          padding: 2px;
         }
       }
     }
