@@ -66,6 +66,7 @@ function FooterCombat() {
               Fight
             </button>
           )}
+          <div></div>
           {selectedHeros && selectedHeros.length > 0 && (
             <button className="removeSelected" onClick={remove}>
               Remove Hero
