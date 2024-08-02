@@ -4,8 +4,7 @@ import { HeroContext } from "../../HeroContext";
 import CombatDialog from "../CombatDialog";
 
 function FooterCombat() {
-  const { heros, selectedHeros, removeSelectedHeros, setFilteredHeros } =
-    useContext(HeroContext) || {};
+  const { selectedHeros, removeSelectedHeros } = useContext(HeroContext) || {};
   const [isCombatDialogOpen, setCombatDialogOpen] = useState(false);
 
   if (!selectedHeros || selectedHeros.length === 0) {
@@ -25,7 +24,6 @@ function FooterCombat() {
   const remove = () => {
     if (typeof removeSelectedHeros === "function") {
       removeSelectedHeros();
-      setFilteredHeros(heros);
     }
   };
 
