@@ -37,7 +37,7 @@ function Cards() {
             key={hero.id}
             onClick={() => handleCardClick(hero)}
           >
-            <img src={hero.images.md} alt={`Image: ${hero.title}`} />
+            <img src={hero.images.sm} alt={`Image: ${hero.title}`} />
             <label>{hero.name}</label>
           </div>
         ))
