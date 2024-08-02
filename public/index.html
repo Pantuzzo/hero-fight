@@ -29,7 +29,7 @@
     -->
     <title>The Game of Champions</title>
   </head>
-  <body>
+  <body class="zoom-adjusted">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -44,3 +44,11 @@
     -->
   </body>
 </html>
+<style>
+  .zoom-adjusted {
+    width: 100vw !important; /* 100% da largura da viewport */
+    height: 100vh !important; /* 100% da altura da viewport */
+    overflow-x: hidden;
+    /* Esconde o scroll horizontal */
+  }
+</style>
