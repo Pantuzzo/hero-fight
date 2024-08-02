@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import "./index.scss";
-import { useNavigate } from "react-router-dom";
 import { HeroContext } from "../../HeroContext";
 
 function Header() {
-  const navigate = useNavigate();
   const { heros, setFilteredHeros } = useContext(HeroContext);
   const { selectedHeros, removeSelectedHeros } = useContext(HeroContext) || {};
+  const searchInputRef = useRef();
 
-  const goToStart = () => {
-    navigate("/");
+  const cleanFild = () => {
+    setFilteredHeros(heros);
+    searchInputRef.current.value = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const search = (event) => {
@@ -22,12 +23,17 @@ function Header() {
 
   return (
     <div className="main-header">
-      <div className="main-header_logo" onClick={goToStart}>
+      <div className="main-header_logo" onClick={cleanFild}>
         <div>
           <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
         </div>
         <div className="actions">
-          <input type="text" placeholder="Pesquisar" onChange={search} />
+          <input
+            type="text"
+            placeholder="Pesquisar"
+            onChange={search}
+            ref={searchInputRef}
+          />
           {selectedHeros && selectedHeros.length > 0 && (
             <button className="removeSelected" onClick={removeSelectedHeros}>
               Remove Hero
