@@ -4,7 +4,6 @@ import { HeroContext } from "../../HeroContext";
 
 function Header() {
   const { heros, setFilteredHeros } = useContext(HeroContext);
-  const { selectedHeros, removeSelectedHeros } = useContext(HeroContext) || {};
   const searchInputRef = useRef();
 
   const cleanFild = () => {
@@ -34,11 +33,6 @@ function Header() {
             onChange={search}
             ref={searchInputRef}
           />
-          {selectedHeros && selectedHeros.length > 0 && (
-            <button className="removeSelected" onClick={removeSelectedHeros}>
-              Remove Hero
-            </button>
-          )}
         </div>
       </div>
     </div>
