@@ -37,7 +37,7 @@
         width: 200px;
         height: 24px;
         padding: 4px;
-        touch-action: manipulation;
+        touch-action: none;
         @media (max-width: 1280px) {
           width: 170px;
         }
